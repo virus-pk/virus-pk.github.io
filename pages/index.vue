@@ -1,14 +1,15 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        virus-pk.github.io
-      </h1>
-      <h2 class="subtitle">
-        A practice of nodejs.
-      </h2>
-    </div>
+  <section class="py-3">
+    <b-container>
+      <b-row class="row justify-content-center">
+        <b-col class="col-auto text-center">
+          <logo class="my-md-5" />
+          <h1 class="text-warning my-md-5">
+            Welcome to my Website
+          </h1>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
 </template>
 
@@ -22,35 +23,4 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style></style>
