@@ -1,5 +1,3 @@
-import pkg from './package'
-
 export default {
   mode: 'spa',
 
@@ -7,11 +5,29 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Tauqeer Ahmad | Portfolio',
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Portfolio of Tauqeer Ahmad showcasing projects, skills, and contact details for web development opportunities.'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Tauqeer Ahmad | Portfolio'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Explore Tauqeer Ahmad projects and professional profile.'
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -19,7 +35,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#ffc107' },
 
   /*
    ** Global CSS
