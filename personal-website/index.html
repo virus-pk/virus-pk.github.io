@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauqeer Ahmad - Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .skill-bar {
+        transition: width 1s ease-in-out;
+      }
+
+      .dark-mode {
+        background-color: #0f172a;
+        color: #ffffff;
+      }
+
+      .dark-mode .bg-white {
+        background-color: #1e293b !important;
+      }
+
+      .dark-mode .bg-gray-50 {
+        background-color: #0f172a !important;
+      }
+
+      .dark-mode .bg-purple-50 {
+        background-color: #581c87 !important;
+      }
+
+      .dark-mode .text-gray-600 {
+        color: #94a3b8 !important;
+      }
+
+      .dark-mode .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+
+      .dark-mode .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+
+      .dark-mode .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+
+      .dark-mode .text-gray-400 {
+        color: #64748b !important;
+      }
+
+      .dark-mode .border-gray-200 {
+        border-color: #334155 !important;
+      }
+
+      .dark-mode .border-gray-300 {
+        border-color: #475569 !important;
+      }
+
+      .dark-mode .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+      }
+
+      .dark-mode .shadow-xl {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+      }
+
+      .dark-mode .shadow-2xl {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+      }
+
+      .dark-mode .card-hover:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+      }
+
+      .dark-mode .bg-gradient-to-br {
+        opacity: 0.9;
+      }
+
+      .dark-mode nav {
+        background-color: rgba(15, 23, 42, 0.9) !important;
+      }
+
+      .dark-mode .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+      }
+
+      .dark-mode .bg-gradient-to-br {
+        background: linear-gradient(
+          135deg,
+          #1e293b 0%,
+          #0f172a 100%
+        ) !important;
+      }
+
+      .dark-mode #home {
+        background: linear-gradient(
+          135deg,
+          #1e293b 0%,
+          #0f172a 100%
+        ) !important;
+      }
+
+      .dark-mode #about {
+        background-color: #1e293b !important;
+      }
+
+      .dark-mode #skills {
+        background-color: #0f172a !important;
+      }
+
+      .dark-mode #projects {
+        background-color: #1e293b !important;
+      }
+
+      .dark-mode #contact {
+        background-color: #0f172a !important;
+      }
+
+      .dark-mode footer {
+        background-color: #0f172a !important;
+      }
+
+      .dark-mode .bg-gray-900 {
+        background-color: #0f172a !important;
+      }
+
+      .dark-mode .hover\\:text-purple-600:hover {
+        color: #a78bfa !important;
+      }
+
+      .dark-mode .hover\\:bg-purple-700:hover {
+        background-color: #7c3aed !important;
+      }
+
+      .dark-mode .hover\\:bg-purple-600:hover {
+        background-color: #9333ea !important;
+      }
+
+      .dark-mode .hover\\:text-white:hover {
+        color: #ffffff !important;
+      }
+
+      .dark-mode input,
+      .dark-mode textarea {
+        background-color: #334155 !important;
+        color: #e2e8f0 !important;
+        border-color: #475569 !important;
+      }
+
+      .dark-mode input:focus,
+      .dark-mode textarea:focus {
+        border-color: #9333ea !important;
+      }
+
+      .dark-mode .bg-purple-100 {
+        background-color: #581c87 !important;
+      }
+
+      .dark-mode .border-t {
+        border-color: #334155 !important;
+      }
+
+      .dark-mode .focus\\:ring-purple-600:focus {
+        --tw-ring-color: #9333ea !important;
+      }
+
+      .dark-mode .focus\\:border-transparent:focus {
+        border-color: transparent !important;
+      }
+
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
+
+      .typing-effect {
+        overflow: hidden;
+        border-right: 0.15em solid #667eea;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #667eea;
+        }
+      }
+    </style>
+  </head>
+  <body class="smooth-scroll">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300"
+    >
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold gradient-text">TA</div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-gray-600 hover:text-purple-600 transition"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-purple-600 transition"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-600 hover:text-purple-600 transition"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-600 hover:text-purple-600 transition"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-purple-600 transition"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center space-x-4">
+            <button
+              id="darkModeToggle"
+              class="p-2 rounded-lg hover:bg-gray-100 transition"
+            >
+              <i class="fas fa-moon text-gray-600"></i>
+            </button>
+            <button id="mobileMenuToggle" class="md:hidden p-2">
+              <i class="fas fa-bars text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+        <div class="px-6 py-4 space-y-3">
+          <a
+            href="#home"
+            class="block text-gray-600 hover:text-purple-600 transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block text-gray-600 hover:text-purple-600 transition"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block text-gray-600 hover:text-purple-600 transition"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block text-gray-600 hover:text-purple-600 transition"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-600 hover:text-purple-600 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-indigo-100 pt-20"
+    >
+      <div class="container mx-auto px-6">
+        <div class="text-center fade-in">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            <span class="gradient-text">Tauqeer Ahmad</span>
+          </h1>
+          <div class="text-2xl md:text-3xl text-gray-700 mb-8 typing-effect">
+            Full Stack Developer & Creative Thinker
+          </div>
+          <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Passionate about building beautiful, functional web applications
+            that make a difference. I love turning ideas into reality through
+            clean code and thoughtful design.
+          </p>
+          <div class="flex justify-center space-x-4 mb-12">
+            <a
+              href="#contact"
+              class="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition transform hover:scale-105"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="#projects"
+              class="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full hover:bg-purple-600 hover:text-white transition transform hover:scale-105"
+            >
+              View Projects
+            </a>
+          </div>
+          <div class="flex justify-center space-x-6">
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-600 transition transform hover:scale-110"
+            >
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-600 transition transform hover:scale-110"
+            >
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-600 transition transform hover:scale-110"
+            >
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-purple-600 transition transform hover:scale-110"
+            >
+              <i class="fas fa-envelope text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          About Me
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <img
+              src="https://via.placeholder.com/400x400/667eea/ffffff?text=Tauqeer"
+              alt="Profile"
+              class="rounded-2xl shadow-2xl"
+            />
+          </div>
+          <div class="fade-in">
+            <h3 class="text-2xl font-semibold mb-4">
+              Building Digital Experiences
+            </h3>
+            <p class="text-gray-600 mb-6">
+              I'm a passionate full-stack developer with a keen eye for design
+              and a love for creating seamless user experiences. With expertise
+              in modern web technologies, I bring ideas to life through clean,
+              efficient code and thoughtful design patterns.
+            </p>
+            <p class="text-gray-600 mb-6">
+              My journey in tech has been driven by curiosity and a desire to
+              solve real-world problems. I believe in writing code that not only
+              works but is also maintainable, scalable, and enjoyable to work
+              with.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="text-3xl font-bold text-purple-600">3+</div>
+                <div class="text-gray-600">Years Experience</div>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="text-3xl font-bold text-purple-600">50+</div>
+                <div class="text-gray-600">Projects Completed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Skills & Expertise
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <div class="text-purple-600 text-3xl mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Frontend Development</h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">React.js</span>
+                  <span class="text-sm text-gray-600">90%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">TypeScript</span>
+                  <span class="text-sm text-gray-600">85%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">Tailwind CSS</span>
+                  <span class="text-sm text-gray-600">95%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <div class="text-purple-600 text-3xl mb-4">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Backend Development</h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">Node.js</span>
+                  <span class="text-sm text-gray-600">88%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">Python</span>
+                  <span class="text-sm text-gray-600">82%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">PostgreSQL</span>
+                  <span class="text-sm text-gray-600">80%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+            <div class="text-purple-600 text-3xl mb-4">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Tools & Technologies</h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">Git/GitHub</span>
+                  <span class="text-sm text-gray-600">92%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 92%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">Docker</span>
+                  <span class="text-sm text-gray-600">75%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm text-gray-600">AWS</span>
+                  <span class="text-sm text-gray-600">70%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    class="skill-bar bg-purple-600 h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Featured Projects
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+            <img
+              src="https://via.placeholder.com/400x250/667eea/ffffff?text=E-Commerce"
+              alt="E-Commerce Platform"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+              <p class="text-gray-600 mb-4">
+                Full-stack e-commerce solution with real-time inventory
+                management and payment processing.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >MongoDB</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+            <img
+              src="https://via.placeholder.com/400x250/764ba2/ffffff?text=Task+Manager"
+              alt="Task Manager"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+              <p class="text-gray-600 mb-4">
+                Collaborative task management tool with real-time updates and
+                team collaboration features.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >Vue.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >Firebase</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >Tailwind</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+            <img
+              src="https://via.placeholder.com/400x250/667eea/ffffff?text=Weather+App"
+              alt="Weather Dashboard"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
+              <p class="text-gray-600 mb-4">
+                Beautiful weather application with location-based forecasts and
+                interactive maps.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >API</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm"
+                  >Chart.js</span
+                >
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" class="text-purple-600 hover:text-purple-700">
+                  <i class="fab fa-github"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Get In Touch
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                <p class="text-gray-600 mb-8">
+                  I'm always interested in hearing about new projects and
+                  opportunities. Whether you have a question or just want to say
+                  hi, feel free to reach out!
+                </p>
+                <div class="space-y-4">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-envelope text-purple-600"></i>
+                    </div>
+                    <div>
+                      <div class="font-semibold">Email</div>
+                      <div class="text-gray-600">tauqeer.ahmad@example.com</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-phone text-purple-600"></i>
+                    </div>
+                    <div>
+                      <div class="font-semibold">Phone</div>
+                      <div class="text-gray-600">+1 (555) 123-4567</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-map-marker-alt text-purple-600"></i>
+                    </div>
+                    <div>
+                      <div class="font-semibold">Location</div>
+                      <div class="text-gray-600">San Francisco, CA</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <form id="contactForm" class="space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition transform hover:scale-105"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="container mx-auto px-6">
+        <div class="text-center">
+          <div class="text-2xl font-bold gradient-text mb-4">TA</div>
+          <p class="text-gray-400 mb-4">
+            © 2024 Tauqeer Ahmad. All rights reserved.
+          </p>
+          <div class="flex justify-center space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition">
+              <i class="fas fa-envelope text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

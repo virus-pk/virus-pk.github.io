@@ -1,11 +1,19 @@
 # virus-pk.github.io
+
 A startup to learn the world of Open source licenses.
 
 > A practice of nodejs.
 
+## Personal Website
+
+The personal website now lives in personal-website/ and can be opened directly:
+
+- Local: open personal-website/index.html
+- GitHub Pages: https://virus-pk.github.io/personal-website/
+
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
