@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+import Scene from '../components/Scene';
+import { profile, projects, skills } from '../data/portfolio';
+
+const title = `${profile.name} | Portfolio`;
+const description =
+  'Portfolio of Tauqeer Ahmad showcasing projects, skills, and contact details for web development opportunities.';
+const nav = ['about', 'projects', 'skills', 'contact'];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Explore Tauqeer Ahmad projects and professional profile." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://virus-pk.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#07070c" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-sans text-zinc-200 antialiased">
+    <div class="pointer-events-none fixed inset-0 -z-0" aria-hidden="true">
+      <Scene client:only="react" />
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-20 px-4">
+      <nav class="glass mx-auto mt-4 flex max-w-5xl items-center justify-between rounded-full px-5 py-3">
+        <a href="#home" class="font-bold tracking-tight text-white">
+          <span class="text-amber-glow">{profile.initials}</span>
+          <span class="hidden sm:inline"> · {profile.name}</span>
+        </a>
+        <ul class="flex gap-4 text-sm sm:gap-6">
+          {nav.map((id) => (
+            <li><a href={`#${id}`} class="capitalize text-zinc-300 transition hover:text-amber-glow">{id}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main class="relative z-10">
+      <section id="home" data-stop="0" class="flex min-h-svh items-center px-4">
+        <div class="mx-auto w-full max-w-5xl">
+          <p class="mb-3 font-medium text-amber-glow">Hello, I'm</p>
+          <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-7xl">{profile.name}</h1>
+          <p class="mt-5 max-w-xl text-lg text-zinc-300">{profile.tagline}</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" class="rounded-full bg-amber-glow px-6 py-3 font-semibold text-zinc-950 shadow-[0_0_30px_rgb(255_193_7/0.45)] transition hover:scale-105">View Projects</a>
+            <a href="#contact" class="glass rounded-full px-6 py-3 font-semibold text-white transition hover:border-amber-glow/60">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="flex min-h-svh items-center px-4">
+        <div class="mx-auto w-full max-w-5xl">
+          <div class="glass max-w-xl rounded-3xl p-8">
+            <h2 class="mb-4 text-3xl font-bold text-amber-glow">About</h2>
+            <p class="text-lg leading-relaxed text-zinc-300">{profile.about}</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="flex min-h-svh items-center px-4 py-24">
+        <div class="mx-auto w-full max-w-5xl">
+          <h2 class="mb-8 text-3xl font-bold text-amber-glow">Projects</h2>
+          <div class="grid gap-5 md:grid-cols-3">
+            {projects.map((p) => (
+              <a href={p.link} target="_blank" rel="noopener" class="glass group flex flex-col rounded-3xl p-6 transition hover:-translate-y-1 hover:border-amber-glow/60 hover:shadow-[0_0_40px_rgb(255_193_7/0.2)]">
+                <h3 class="text-xl font-bold text-white">{p.title}</h3>
+                <p class="mt-1 text-sm text-amber-glow/80">{p.stack}</p>
+                <p class="mt-4 flex-1 text-zinc-300">{p.description}</p>
+                <span class="mt-6 text-sm font-semibold text-amber-glow">Open <span class="inline-block transition group-hover:translate-x-1">→</span></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="flex min-h-svh items-center px-4">
+        <div class="mx-auto w-full max-w-5xl">
+          <div class="glass max-w-xl rounded-3xl p-8">
+            <h2 class="mb-6 text-3xl font-bold text-amber-glow">Skills</h2>
+            <ul class="flex flex-wrap gap-3">
+              {skills.map((s) => (
+                <li class="rounded-full border border-amber-glow/40 bg-amber-glow/10 px-4 py-2 text-sm font-medium text-amber-100">{s}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="flex min-h-svh items-center px-4">
+        <div class="mx-auto w-full max-w-5xl text-center">
+          <h2 class="text-4xl font-extrabold text-white sm:text-5xl">Let's build something.</h2>
+          <p class="mx-auto mt-4 max-w-lg text-lg text-zinc-300">Open to freelance work, collaborations, and full-time opportunities.</p>
+          <a href={profile.github} target="_blank" rel="noopener" class="mt-8 inline-block rounded-full bg-amber-glow px-7 py-3 font-semibold text-zinc-950 shadow-[0_0_30px_rgb(255_193_7/0.45)] transition hover:scale-105">github.com/virus-pk</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 pb-8 text-center text-sm text-zinc-500">
+      © {new Date().getFullYear()} {profile.name}
+    </footer>
+  </body>
+</html>

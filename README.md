@@ -1,23 +1,23 @@
 # virus-pk.github.io
-A startup to learn the world of Open source licenses.
 
-> A practice of nodejs.
+Portfolio of Tauqeer Ahmad: an Astro site with a scroll-driven 3D scene built with React Three Fiber, deployed to GitHub Pages.
 
-## Build Setup
+## Development
 
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static output in dist/
+npm run preview
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+- Content (projects, skills, profile): `src/data/portfolio.ts`
+- Page and text layer: `src/pages/index.astro`
+- 3D scene: `src/components/Scene.tsx`
+
+The 3D canvas is skipped when the visitor prefers reduced motion or has no WebGL; the page content works without it.
+
+## Deployment
+
+Every push to `main` is built and deployed by `.github/workflows/deploy.yml`.
+In **Settings → Pages**, the source must be set to **GitHub Actions**.
